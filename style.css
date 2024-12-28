@@ -1,0 +1,149 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "hero main-content main-content"
+    "sidebar main-content main-content"
+    "sidebar extra-content extra-content"
+    "related-images related-images related-posts"
+    "footer footer footer";
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: auto;
+  gap: 5px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.header {
+  grid-area: header;
+  background-color: rgb(92, 146, 245);
+  text-align: center;
+  padding: 20px;
+}
+
+.hero {
+  grid-area: hero;
+  background-color: rgb(210, 210, 239);
+  padding: 20px;
+  text-align: center;
+  height: 200px;
+}
+
+.main-content {
+  grid-area: main-content;
+  background-color: rgba(255, 166, 0, 0.611);
+  padding: 20px;
+  text-align: center;
+  height: 300px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: rgb(147, 244, 147);
+  padding: 20px;
+  text-align: center;
+  height: 200px;
+}
+
+.extra-content {
+  grid-area: extra-content;
+  background-color: rgb(157, 157, 157);
+  padding: 20px;
+  text-align: center;
+  height: 100px;
+}
+
+.related-images {
+  grid-area: related-images;
+  background-color: rgb(1, 133, 133);
+  padding: 20px;
+  text-align: center;
+  height: 150px;
+}
+
+.related-posts {
+  grid-area: related-posts;
+  background-color: rgb(250, 185, 196);
+  padding: 20px;
+  text-align: center;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: rgb(251, 164, 3);
+  text-align: center;
+  padding: 20px;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "main-content"
+      "hero"
+      "sidebar"
+      "extra-content"
+      "related-images"
+      "related-posts"
+      "footer";
+    grid-template-columns: 1fr 1fr;
+  }
+  .main-content {
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid black;
+  }
+  .header,
+  .hero,
+  .sidebar,
+  .extra-content,
+  .related-images,
+  .related-posts,
+  .footer {
+    height: auto;
+    background-color: white;
+    border: 1px solid black;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header header"
+      "main-content main-content"
+      "hero sidebar"
+      "extra-content extra-content"
+      "related-images related-posts"
+      "footer footer";
+    grid-template-columns: 1fr;
+  }
+  .main-content {
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid black;
+  }
+
+  .header,
+  .extra-content,
+  .related-images,
+  .related-posts,
+  .footer {
+    height: auto;
+    background-color: white;
+    border: 1px solid black;
+  }
+  .hero,
+  .sidebar {
+    width: auto;
+    background-color: white;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: center;
+  }
+}
